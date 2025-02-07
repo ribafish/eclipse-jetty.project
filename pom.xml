@@ -1314,6 +1314,31 @@
     <pluginManagement>
       <plugins>
         <plugin>
+          <groupId>com.gradle</groupId>
+          <artifactId>develocity-maven-extension</artifactId>
+          <configuration>
+            <develocity>
+              <normalization>
+                <runtimeClassPath>
+                  <propertiesNormalizations>
+                    <propertiesNormalization>
+                      <path>**/build.properties</path>
+                      <ignoredProperties>
+                        <ignore>timestamp</ignore>
+                      </ignoredProperties>
+                    </propertiesNormalization>
+                  </propertiesNormalizations>
+                </runtimeClassPath>
+                <systemProperties>
+                  <ignoredKeys>
+                    <ignore>mavenRepoPath</ignore>
+                  </ignoredKeys>
+                </systemProperties>
+              </normalization>
+            </develocity>
+          </configuration>
+        </plugin>
+        <plugin>
           <groupId>com.mycila</groupId>
           <artifactId>license-maven-plugin</artifactId>
           <version>${license.maven.plugin.version}</version>
